@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex !important;
+}
+
+.app {
+  max-width: 1024px;
+  max-height: 1024px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+.section-start {
+  height: 100vh;
+
+  background-color: grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-game {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+}
+.section-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: grey;
+}
+.section-over {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: grey;
+}
+
+.text-primary {
+  font-size: 1.6rem;
+}
+.btn {
+  outline: none;
+  border: none;
+  padding: 1rem 2.4rem;
+  border-radius: 4px;
+}
+
+.card {
+  border-radius: 6px;
+  padding: 10px;
+  background-color: white;
+  width: fit-content;
+}
+
+.btn-start {
+  background-color: red;
+  color: white;
+}
+
+.form-control {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  background-color: rgb(230, 230, 230);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.game-area {
+  position: relative;
+  max-height: 700px;
+}
+.danger-area {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 0, 0, 0.326);
+  bottom: 100px;
+  z-index: 1;
+}
+.board {
+  background-color: rgb(49, 44, 35);
+  height: 100%;
+  width: 100px;
+  border: solid 1px white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  position: relative;
+}
+
+.btn-destroy {
+  flex: 1;
+  height: 100px;
+}
+
+.virus {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  top: 0;
+}
+
+.bg-active {
+  background-color: antiquewhite !important;
+}
+.bg-area-active {
+  background-color: rgb(255, 96, 96) !important;
+}

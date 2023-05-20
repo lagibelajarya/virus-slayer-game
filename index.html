@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client side 3</title>
+    <link rel="shortcut icon" href="images/virus.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="container">
+        <div class="section-start">
+          <div class="card">
+            <p class="text-primary">1. Input UserName</p>
+            <p class="text-primary">2. Destroy virus with D F J and k Key</p>
+            <p class="text-primary">3. Reach Hight Score</p>
+            <p class="text-primary" style="margin-bottom: 1rem">4. enjoy the game</p>
+
+            <div class="d-flex flex-column" style="gap: 1rem">
+              <input type="text" placeholder="input Your Name!" class="field-name form-control" />
+              <button onclick="startGame()" class="btn btn-start d-none">Play</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-game d-none">
+          <div class="card" style="background-color: wheat; height: fit-content">
+            <p class="text-primary field-name">Name : rifaldi</p>
+            <p class="text-primary field-timer">Timer : 0 : 0</p>
+            <p class="text-primary field-score">Score : 0</p>
+            <p class="text-primary field-fail">Fail : 0</p>
+            <button onclick="pauseTheGame()" class="btn">pause</button>
+          </div>
+
+          <div class="game-area d-flex">
+            <div class="danger-area"></div>
+            <div class="board board-1">
+              <button class="btn btn-destroy">D</button>
+            </div>
+            <div class="board board-2">
+              <button class="btn btn-destroy">F</button>
+            </div>
+            <div class="board board-3">
+              <button class="btn btn-destroy">J</button>
+            </div>
+            <div class="board board-4">
+              <button class="btn btn-destroy">K</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-pause d-none">
+          <div class="card">
+            <p class="text-primary">Game Paused</p>
+            <div class="d-flex">
+              <button onclick="continueGame()" class="btn">Continue</button>
+              <button onclick="restartGame()" class="btn">Restart</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-over d-none">
+          <div class="card">
+            <p class="text-primary">Game Over</p>
+            <p class="text-primary final-score"></p>
+            <p class="text-primary final-timer"></p>
+            <p class="text-primary final-name"></p>
+            <div class="d-flex">
+              <button onclick="restartGame()" class="btn">Restart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
