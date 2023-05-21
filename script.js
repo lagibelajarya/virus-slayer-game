@@ -8,6 +8,7 @@ let timerEl = document.querySelector('.field-timer');
 let scoreEl = document.querySelector('.field-score');
 let failEl = document.querySelector('.field-fail');
 let nameEl = document.querySelector('.field-name');
+let nameInGame = document.querySelector('.field-name-in-game');
 
 let board1 = document.querySelector('.board-1');
 let board2 = document.querySelector('.board-2');
@@ -170,23 +171,28 @@ let startGame = async () => {
   makeVirus();
   timer();
   toSectionGame();
-  console.log(allIntervals);
+  nameInGame.innerHTML = 'Name : ' + fieldName.value;
 };
-let pauseTheGame = () => {
-  toPauseGame();
+let pauseTheGame = async () => {
+  // toPauseGame();
   clearInterval(intervalTimer);
   clearInterval(intervalMoveVirus);
   clearInterval(intervalMakeVirus);
-  allVirus.map((virus) => {
+  allVirusOnPause = [];
+  allVirus.map(async (virus) => {
     let virusOnBoard = document.querySelector(`.virus.${virus}`);
-    if (virusOnBoard) {
-      let xPos = virusOnBoard.style.top;
-      let className = virusOnBoard.className;
-      allVirusOnPause = [];
-      allVirusOnPause.push({ class: className, top: xPos });
-      allVirusOnPause.map((item) => {});
-    }
+    let xPos = virusOnBoard.style.top;
+    let className = virusOnBoard.className;
+
+    // document.querySelectorAll('.virus').forEach((item) => {
+    //   item.remove();
+    // });
+
+    allVirusOnPause.push({ class: className, top: xPos });
+    allVirusOnPause.map((item) => {});
   });
+
+  console.log(allVirusOnPause);
 };
 
 let continueGame = () => {
@@ -195,6 +201,7 @@ let continueGame = () => {
 };
 let gameOver = () => {
   toOverGame();
+
   clearInterval(intervalTimer);
   clearInterval(intervalMoveVirus);
   clearInterval(intervalMakeVirus);
@@ -214,6 +221,8 @@ let restartGame = () => {
   document.querySelectorAll('.virus').forEach((item) => {
     item.remove();
   });
+  allVirus = [];
+  virusOnBoard = [];
   toSectionStart();
   fail = 0;
   second = 0;
